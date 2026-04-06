@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-bg-border;
+  }
+  
+  body {
+    @apply bg-bg text-txt-primary;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  
+  ::selection {
+    @apply bg-accent/30 text-txt-primary;
+  }
+  
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-bg-surface;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-bg-border rounded-full hover:bg-txt-muted;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 
+           focus:outline-none focus:ring-2 focus:ring-accent/50 
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .btn-primary {
+    @apply btn bg-accent text-white hover:bg-accent-hover shadow-glow-sm;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-bg-card border border-bg-border text-txt-primary 
+           hover:border-accent hover:text-accent;
+  }
+  
+  .input {
+    @apply w-full px-4 py-2.5 bg-bg-card border border-bg-border rounded-lg
+           text-txt-primary placeholder-txt-muted
+           focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent/50
+           transition-colors duration-200;
+  }
+  
+  .card {
+    @apply bg-bg-card border border-bg-border rounded-xl shadow-card;
+  }
+}
+
+.prose pre {
+  @apply bg-bg-card border border-bg-border rounded-xl overflow-hidden;
+}
+
+.prose code {
+  @apply text-txt-code font-mono text-sm;
+}
+
+.prose a {
+  @apply text-accent hover:text-accent-hover no-underline;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  @apply font-display text-txt-primary;
+}
+
+.prose blockquote {
+  @apply border-l-accent text-txt-secondary italic;
+}
+
+@layer utilities {
+  .animate-in {
+    animation: slideUp 0.4s ease-out;
+  }
+}

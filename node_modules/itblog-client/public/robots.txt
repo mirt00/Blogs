@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+User-agent: *
+Disallow: /admin
+Disallow: /login
+Disallow: /register
+Disallow: /api/
+
+Sitemap: https://itblog.dev/sitemap.xml
