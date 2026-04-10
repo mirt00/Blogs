@@ -8,7 +8,7 @@ import { formatDate } from '../../utils/formatDate';
 export default function Posts() {
   const { data, isLoading } = useQuery({
     queryKey: ['admin-posts'],
-    queryFn: () => api.get('/v1/posts?limit=100').then((res) => res.data),
+    queryFn: () => api.get('/posts?limit=100').then((res) => res.data),
   });
 
   const posts = data?.posts || [];

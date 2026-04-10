@@ -9,7 +9,7 @@ export default function LikeButton({ postId, initialCount, onLoginRequired }) {
   const [count, setCount] = useState(initialCount);
 
   const { mutate, isPending } = useMutation({
-    mutationFn: () => api.post(`/v1/likes/${postId}/like`).then((res) => res.data),
+    mutationFn: () => api.post(`/likes/${postId}/like`).then((res) => res.data),
     onSuccess: (data) => {
       setLiked(data.liked);
       setCount(data.likeCount);
